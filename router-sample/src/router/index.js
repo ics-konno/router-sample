@@ -1,8 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import NewPage from "../views/NewPage"
-import User from "../views/User"
+import NewPage from "../views/NewPage";
+import User from "../views/User";
+import Profile from "../views/UserChild/Profile";
+import Setting from "../views/UserChild/Setting";
 
 Vue.use(VueRouter);
 
@@ -29,7 +31,11 @@ const routes = [
   {
     path: "/:id",
     name: "User",
-    component: User
+    component: User,
+    children: [
+      { path: "profile", name: "Profile", component: Profile },
+      { path: "setting", name: "Setting", component: Setting }
+    ]
   }
 ];
 
