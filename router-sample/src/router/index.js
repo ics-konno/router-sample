@@ -29,14 +29,19 @@ const routes = [
     component: NewPage
   },
   {
-    path: "/:id",
+    path: "/user/:id",
     name: "User",
     component: User,
     children: [
       { path: "profile", name: "Profile", component: Profile },
       { path: "setting", name: "Setting", component: Setting }
     ]
-  }
+  },
+  {
+    path: "/dummy",
+    redirect: {name: "Home"}
+    // redirect: "/" でもよい
+  },
 ];
 
 const router = new VueRouter({
