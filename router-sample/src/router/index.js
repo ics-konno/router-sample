@@ -5,6 +5,7 @@ import NewPage from "../views/NewPage";
 import User from "../views/User";
 import Profile from "../views/UserChild/Profile";
 import Setting from "../views/UserChild/Setting";
+import Complete from "@/views/Complete";
 
 Vue.use(VueRouter);
 
@@ -36,6 +37,11 @@ const routes = [
       { path: "profile", name: "Profile", component: Profile },
       { path: "setting", name: "Setting", component: Setting }
     ]
+  },
+  {
+    path: "/complete",
+    name: "Complete",
+    component: Complete
   },
   {
     path: "/dummy",
